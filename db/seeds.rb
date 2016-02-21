@@ -27,7 +27,7 @@ loop do
     page = Nokogiri::HTML(open(daum_url).read)
     link = "http://cafe.daum.net#{page.css('frame').first.attribute('src').text}"
     page_with_score = Nokogiri::HTML(open(link).read)
-    score = page_with_score.css('span.num').first.text
+    score = page_with_score.css('span.num').first.text.gsub(/,/,"")
     @daum_cafe = Cafe.where(url: daum_url).first
     if @daum_cafe
       # update if membership count changes
@@ -66,7 +66,7 @@ loop do
 
   if naver_url != '' && naver_url != 'none'
     page = Nokogiri::HTML(open(naver_url))
-    score = page.css('em')[1].text
+    score = page.css('em')[1].text.gsub(/,/,"")
     @naver_cafe = Cafe.where(url: naver_url).first
     if @naver_cafe
       # update if membership count changes

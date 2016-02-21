@@ -1,2 +1,56 @@
-<h1>Caves#index</h1>
-<p>Find me in app/views/caves/index.html.erb</p>
+<section id='header'>
+  <h2>ᕙ(<span class='blush'>๑</span> ⚈ै‿ ⚈ै<span class='blush'>๑</span>)ᕗ</h2>
+  <h1>Sundry Cafe Rankings</h1>
+  <p id='updated'>Last updated: <%= @top.first.updated_at.strftime("%Y-%m-%d %I:%m%p %Z") %></p>
+</section>
+
+<section id='main'>
+  <div class='paginate'>
+    <%= will_paginate @top, :class => 'flickr_pagination' %>
+  </div>
+
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <tr>
+      <th>Rank</th>
+      <th class="mdl-data-table__cell--non-numeric">Name (KR)</th>
+      <th class="mdl-data-table__cell--non-numeric">Name (ENG)</th>
+      <th>Members</th>
+      <th class="mdl-data-table__cell--non-numeric">Type</th>
+    </tr>
+  <% @top.each_with_index do |cafe, index| %>
+    <tr>
+      <td class='rank'>
+        <%= @top.offset + index + 1 %>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        <a class="cafe-urls" href="<%= cafe.url %>" target="_blank"><%= cafe.kor_name %></a>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        <a class="cafe-urls" href="<%= cafe.url %>" target="_blank"><%= cafe.eng_name %></a>
+      </td>
+      <td class='scores'>
+        <% if cafe.members.to_i >= 5 %>
+          <%= cafe.members.to_i.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse %>
+        <% else %>
+          <%= "< 5" %>
+        <% end %>
+      </td>
+      <td class='cafe_type'>
+        <%= cafe.cafe_type.capitalize %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+
+  <div class='paginate'>
+    <%= will_paginate @top, :class => 'flickr_pagination' %>
+  </div>
+</section>
+
+<hr>
+
+<section id='footer'>
+  <a href="http://twitter.com/californiafries">
+    <p>YongChicken 2016</p>
+  </a>
+</section>

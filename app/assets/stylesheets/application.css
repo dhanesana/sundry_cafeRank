@@ -11,5 +11,104 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require material
  *= require_self
  */
+
+body {
+  font-family: Helvetica, Arial;
+  background-color: #FAFAFA;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+table, th, td {
+  margin: 0.5em auto;
+}
+
+#updated {
+  text-align: center;
+  font-family: "Helvetica";
+}
+
+.paginate {
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  padding-bottom: 0.5em;
+  background-color: #FAFAFA;
+}
+
+.scores {
+  text-align: center !important;
+}
+
+#main {
+  background-color: #FAFAFA;
+}
+
+#footer {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.flickr_pagination {
+  font-family: 'Helvetica';
+  text-align: center;
+  padding: 0.3em;
+  cursor: default;
+}
+
+.flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+  padding: 0.2em 0.5em;
+}
+
+.flickr_pagination .disabled {
+  color: #aaaaaa;
+}
+
+.flickr_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(255,64,129);
+}
+
+.flickr_pagination a {
+  border: 1px solid #dddddd;
+  color: #2196f3;
+  text-decoration: none;
+}
+
+.flickr_pagination a:hover, .flickr_pagination a:focus {
+    /*border-color: #003366;*/
+    background: rgb(255,64,129);
+    color: white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.flickr_pagination .page_info {
+  color: #aaaaaa;
+  padding-top: 0.8em;
+}
+
+.flickr_pagination .previous_page, .flickr_pagination .next_page {
+  border-width: 1.5px;
+}
+
+.flickr_pagination .previous_page {
+  margin-right: 1em;
+}
+
+.flickr_pagination .next_page {
+  margin-left: 1em
+}
+
+.blush {
+  color: rgb(255,64,129);
+}
