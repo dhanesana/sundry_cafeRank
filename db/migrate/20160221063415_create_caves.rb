@@ -5,7 +5,7 @@ class CreateCaves < ActiveRecord::Migration
       t.string :eng_name
       t.string :url
       t.float :members
-      t.string :type
+      t.string :cafe_type
 
       t.timestamps null: false
     end
