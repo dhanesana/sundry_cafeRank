@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kor_name: MyString
+  eng_name: MyString
+  url: MyString
+  members: 1.5
+  type: 
+
+two:
+  kor_name: MyString
+  eng_name: MyString
+  url: MyString
+  members: 1.5
+  type: 
