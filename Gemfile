@@ -57,3 +57,7 @@ gem 'puma'
 # Google Auth and API
 gem 'google_drive'
 gem 'google-api-client'
+
+# dotenv
+gem 'dotenv-rails'
+gem 'dotenv-heroku'
